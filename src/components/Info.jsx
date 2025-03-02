@@ -2,7 +2,6 @@ import styled from "styled-components";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { filterByCode } from '../config'
-import { getHeaders } from "../config";
 
 const Wrapper = styled.section`
     margin-top: 2rem;
@@ -105,7 +104,7 @@ export const Info = (props) => {
 
     useEffect(() => {
         if(borders.length){
-            axios.get(filterByCode(borders), { headers: getHeaders() })
+            axios.get(`https://cors-anywhere.herokuapp.com/${filterByCode(borders)}`)
             .then(({data}) => setNeighbors(data.map(el=>el.name)))
         }
     }, [borders]);

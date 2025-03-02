@@ -6,7 +6,6 @@ import { Controls } from '../components/Controls'
 import { ALL_COUNTRIES } from '../config'
 import {useNavigate} from 'react-router-dom'
 import { Natification } from '../components/Natification'
-import { getHeaders } from '../config'
 
 export const HomePage = ({countries, setCountries}) => {
     const [filtredCountries, setFilteredCountries] = useState([]);
@@ -34,7 +33,7 @@ export const HomePage = ({countries, setCountries}) => {
         if (!countries.length) {
             setLoading(true);
 
-            axios.get(ALL_COUNTRIES, { headers: getHeaders() })
+            axios.get(`https://cors-anywhere.herokuapp.com/ ${ALL_COUNTRIES}`)
                 .then(({ data }) => {
                     setCountries(data);
                     setFilteredCountries(data); 

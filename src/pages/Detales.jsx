@@ -6,7 +6,6 @@ import { searchByCountry } from "../config";
 import { Button } from "../components/Button"; 
 import { Info } from "../components/Info";
 import { Natification } from "../components/Natification";
-import { getHeaders } from "../config";
 
 export const Detales = () => {
     const {name} = useParams();
@@ -17,7 +16,7 @@ export const Detales = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get(searchByCountry, { headers: getHeaders() })
+        axios.get(`https://cors-anywhere.herokuapp.com/${searchByCountry(name)}`)
         .then(({data}) => setCountry(data[0]))
         .catch((error) => {
             setError(`Error : ${error}`)
