@@ -104,7 +104,7 @@ export const Info = (props) => {
 
     useEffect(() => {
         if(borders.length){
-            axios.get(filterByCode(borders))
+            axios.get(`https://cors-anywhere.herokuapp.com/${filterByCode(borders)}`)
             .then(({data}) => setNeighbors(data.map(el=>el.name)))
         }
     }, [borders]);
