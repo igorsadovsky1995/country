@@ -72,7 +72,7 @@ Please change the parent <Route path="${z}"> to <Route path="${z==="/"?"*":`${z}
     justify-content: space-between;
     align-items: center;
     padding: 2rem 0;
-`,jO=Ne($f).attrs({to:"/"})`
+`,jO=Ne($f).attrs({to:"/country/"})`
     text-decoration: none;
     color: var(--color-text);
     font-size: var(--fs-sm);
