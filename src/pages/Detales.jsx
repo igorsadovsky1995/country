@@ -28,7 +28,7 @@ export const Detales = () => {
 
     return (
         <div>
-            <Button onClick={()=>navigate(-1)}>
+            <Button onClick={()=>navigate('/country/')}>
                 <IoArrowBack/> Back
             </Button>
             {
