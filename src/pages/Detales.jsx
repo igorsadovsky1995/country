@@ -16,7 +16,7 @@ export const Detales = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get(`https://cors-anywhere.herokuapp.com/${searchByCountry(name)}`)
+        axios.get(searchByCountry(name))
         .then(({data}) => setCountry(data[0]))
         .catch((error) => {
             setError(`Error : ${error}`)

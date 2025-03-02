@@ -33,7 +33,7 @@ export const HomePage = ({countries, setCountries}) => {
         if (!countries.length) {
             setLoading(true);
 
-            axios.get(`https://cors-anywhere.herokuapp.com/ ${ALL_COUNTRIES}`)
+            axios.get(ALL_COUNTRIES)
                 .then(({ data }) => {
                     setCountries(data);
                     setFilteredCountries(data); 
