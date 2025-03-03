@@ -122,31 +122,31 @@ export const Info = (props) => {
                                 <b>
                                     Native name : 
                                 </b>
-                                {` ${name.official}`}
+                                {` ${name.official ? name.official:" N/A"}`}
                             </ListItem>
                             <ListItem>
                                 <b>
                                     Population : 
                                 </b>
-                                {` ${population}`}
+                                {` ${population ? population:" N/A"}`}
                             </ListItem>
                             <ListItem>
                                 <b>
                                     Region : 
                                 </b>
-                                {` ${region}`}
+                                {` ${region ? region:" N/A"}`}
                             </ListItem>
                             <ListItem>
                                 <b>
                                     Sub region :
                                 </b>
-                                {` ${subregion}`}
+                                {` ${subregion ? subregion:" N/A"}`}
                             </ListItem>
                             <ListItem>
                                 <b>
                                     Capital : 
                                 </b>
-                                {` ${capital}`}
+                                {` ${capital ? capital:" N/A"}`}
                             </ListItem>
                         </List>
                         <List>
@@ -154,21 +154,21 @@ export const Info = (props) => {
                                 <b>
                                     Top level domain : 
                                 </b>
-                                {tld.map(d => (<span key={d}> {d}</span>))}
+                                {tld ? (tld.map(d => (<span key={d}> {d}</span>))):(" N/A")}
                             </ListItem>
                             <ListItem>
                                 <b>
                                     Currency :
                                 </b>
-                                {Object.entries(currencies).map(([code, currency]) => (
+                                {currencies ? (Object.entries(currencies).map(([code, currency]) => (
                                     <span key={code}> {currency.name} ({currency.symbol}) </span>
-                                ))}
+                                ))):(" N/A")}
                             </ListItem>
                             <ListItem>
                                 <b>
                                     Lenguages : 
                                 </b>
-                                {Object.values(languages).map((l, i) => (<span key={i}> {l} </span>))}
+                                {languages ? (Object.values(languages).map((l, i) => (<span key={i}> {l} </span>))):(" N/A")}
                             </ListItem>
                         </List>
                     </ListGroup>
